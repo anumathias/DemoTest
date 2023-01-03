@@ -30,7 +30,7 @@ public class CustomerController {
     private PasswordEncoder passwordEncoder;
         
      @GetMapping
-        public List<Customer> getAllFarmers()
+        public List<Customer> getAllCustomers()
         {
             return customerRepository.findAll();
         }
@@ -68,7 +68,7 @@ public class CustomerController {
 //     
      //update employee
      @PutMapping("/{id}")
-        public ResponseEntity updateEmployeebyid(@RequestBody Customer customer,@PathVariable("id") int id) {
+        public ResponseEntity updateCustomerbyid(@RequestBody Customer customer,@PathVariable("id") int id) {
             try {
             	Customer existfarmers= customerRepository.findById(id).get();
             	customerRepository.save(customer);
@@ -79,7 +79,7 @@ public class CustomerController {
             
          
             @DeleteMapping("/{id}")
-            public void deleteEmployee(@PathVariable("id") int id) {
+            public void deleteCustomer(@PathVariable("id") int id) {
                 this.customerRepository.deleteById(id);
       }
 }

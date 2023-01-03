@@ -45,8 +45,7 @@ public class AuthenticationProvider implements org.springframework.security.auth
 
 	@Override
 	public boolean supports(Class<?> authentication) {
-		// TODO Auto-generated method stub
-		return false;
+		return (UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication));
 	}
 
 	
